@@ -62,7 +62,8 @@ class App(ctk.CTk):
 		path = self.read_file_entry.get()
 		ans = ""
 		try:
-			data = np.loadtxt(path, delimiter=",", dtype="unicode")
+			data = np.loadtxt(path, delimiter=",", dtype="unicode", encoding="utf-8") # TODO: 元ファイルのencodingに合わせる
+			print("loaded!!!!!")
 			for row in data:
 				for value in row:
 					ans += str(value).strip() + " & "
